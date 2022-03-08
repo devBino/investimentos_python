@@ -1,4 +1,5 @@
 #!python3
+import re
 
 def tratar_dados_fii(dados):
     
@@ -13,15 +14,4 @@ def tratar_dados_fii(dados):
 
 
 def tratar_numeros(numero):
-    
-    num = numero.strip()
-    chars = '0123456789,'
-    novo_num = ''
-
-    for c in num:
-        if c in chars:
-            novo_num += c
-    
-    novo_num = novo_num.replace(',','.')
-
-    return novo_num
+    return int(re.sub('[^0-9]','',numero))
